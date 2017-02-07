@@ -40,4 +40,9 @@ public class NameTest {
     public void isSimilarNameShouldReturnTrue() throws IllegalValueException {
         assertTrue(name.isSimilar(new Name("Name")));
     }
+    
+    @Test
+    public void isSimilarNameWithAllSmallLetterShouldReturnTrue() throws IllegalValueException {
+        assertTrue(name.isSimilar(new Name("name")));
+    }
 }
