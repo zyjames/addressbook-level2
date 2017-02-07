@@ -15,6 +15,7 @@ public class Name {
     public static final String MESSAGE_NAME_CONSTRAINTS = "Person names should be spaces or alphabetic characters";
     public static final String NAME_VALIDATION_REGEX = "[\\p{Alpha} ]+";
     public final String fullName;
+    private final String[] nameSplit;
 
     /**
      * Validates given name.
@@ -27,6 +28,8 @@ public class Name {
             throw new IllegalValueException(MESSAGE_NAME_CONSTRAINTS);
         }
         this.fullName = trimmedName;
+        this.nameSplit = trimmedName.split(" ");
+        Arrays.sort(nameSplit);
     }
 
     /**
@@ -64,8 +67,18 @@ public class Name {
      * Returns true if the otherName is similar to this name
      */
     public boolean isSimilar(Name otherName) {
-        if (otherName instanceof Name && this.fullName.equalsIgnoreCase(otherName.fullName.toLowerCase())) {
-            return true;
+        if (otherName instanceof Name) {
+            if (this.nameSplit.length != otherName.nameSplit.length) {
+                return false;
+            }
+            else {
+                for (int i = 0; i < this.nameSplit.length; i++) {
+                    if (!nameSplit[i].equalsIgnoreCase(otherName.nameSplit[i])) {
+                        return false;
+                    }
+                }
+                return true;
+            }
         } else {
             return false;
         }
