@@ -64,7 +64,7 @@ public class Name {
      * Returns true if the otherName is similar to this name
      */
     public boolean isSimilar(Name otherName) {
-        if (otherName instanceof Name && this.fullName.equals(otherName.fullName)) {
+        if (otherName instanceof Name && this.fullName.equalsIgnoreCase(otherName.fullName.toLowerCase())) {
             return true;
         } else {
             return false;
