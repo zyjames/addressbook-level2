@@ -20,4 +20,9 @@ public class NameTest {
     public void isSimilarNullShouldReturnFalse() {
         assertFalse(name.isSimilar(null));
     }
+    
+    @Test
+    public void isSimilarDifferentNameShouldReturnFalse() throws IllegalValueException {
+        assertFalse(name.isSimilar(new Name("another name")));
+    }
 }
