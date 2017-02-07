@@ -64,6 +64,10 @@ public class Name {
      * Returns true if the otherName is similar to this name
      */
     public boolean isSimilar(Name otherName) {
-        return false;
+        if (this.fullName.equals(otherName.fullName)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
