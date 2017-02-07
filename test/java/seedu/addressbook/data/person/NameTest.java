@@ -55,4 +55,9 @@ public class NameTest {
     public void isSimilarNameWithMixLetterShouldReturnTrue() throws IllegalValueException {
         assertTrue(name.isSimilar(new Name("nAmE")));
     }
+    
+    @Test
+    public void isSimilarNameWithSpaceAtBackShouldReturnTrue() throws IllegalValueException {
+        assertTrue(name.isSimilar(new Name("Name ")));
+    }
 }
