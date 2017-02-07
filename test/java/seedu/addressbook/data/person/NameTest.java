@@ -65,4 +65,10 @@ public class NameTest {
     public void isSimilarNameWithSpaceAtFrontShouldReturnTrue() throws IllegalValueException {
         assertTrue(name.isSimilar(new Name(" Name")));
     }
+    
+    @Test
+    public void isSimilarNameDifferentOrderShouldReturnTrue() throws IllegalValueException {
+        Name name = new Name("Same Name");
+        assertTrue(name.isSimilar(new Name("Name Same")));
+    }
 }
