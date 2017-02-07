@@ -71,4 +71,10 @@ public class NameTest {
         Name name = new Name("Same Name");
         assertTrue(name.isSimilar(new Name("Name Same")));
     }
+    
+    @Test
+    public void isSimilarNameWithCommaShouldReturnTrue() throws IllegalValueException {
+        Name name = new Name("Same Name");
+        assertTrue(name.isSimilar(new Name("Name, Same")));
+    }
 }
