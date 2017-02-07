@@ -60,4 +60,9 @@ public class NameTest {
     public void isSimilarNameWithSpaceAtBackShouldReturnTrue() throws IllegalValueException {
         assertTrue(name.isSimilar(new Name("Name ")));
     }
+    
+    @Test
+    public void isSimilarNameWithSpaceAtFrontShouldReturnTrue() throws IllegalValueException {
+        assertTrue(name.isSimilar(new Name(" Name")));
+    }
 }
