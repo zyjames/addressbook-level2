@@ -60,4 +60,10 @@ public class Name {
         return fullName.hashCode();
     }
 
+    /**
+     * Returns true if the otherName is similar to this name
+     */
+    public boolean isSimilar(Name otherName) {
+        return false;
+    }
 }
