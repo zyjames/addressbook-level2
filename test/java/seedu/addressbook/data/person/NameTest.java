@@ -35,4 +35,9 @@ public class NameTest {
     public void isSimilarSingleDifferentNameShouldReturnFalse() throws IllegalValueException {
         assertFalse(name.isSimilar(new Name("another")));
     }
+    
+    @Test
+    public void isSimilarNameShouldReturnTrue() throws IllegalValueException {
+        assertTrue(name.isSimilar(new Name("Name")));
+    }
 }
