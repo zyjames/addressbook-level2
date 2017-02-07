@@ -30,4 +30,9 @@ public class NameTest {
     public void isSimilarSingleCharacterShouldReturnFalse() throws IllegalValueException {
         assertFalse(name.isSimilar(new Name("a")));
     }
+    
+    @Test
+    public void isSimilarSingleDifferentNameShouldReturnFalse() throws IllegalValueException {
+        assertFalse(name.isSimilar(new Name("another")));
+    }
 }
