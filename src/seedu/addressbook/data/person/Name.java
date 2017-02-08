@@ -77,12 +77,7 @@ public class Name {
                 return this.nameSet.containsAll(otherName.nameSet);
             }
             else {
-                for (int i = 0; i < this.nameSplit.length; i++) {
-                    if (!nameSplit[i].equalsIgnoreCase(otherName.nameSplit[i])) {
-                        return false;
-                    }
-                }
-                return true;
+                return otherName.nameSet.containsAll(this.nameSet);
             }
         } else {
             return false;
