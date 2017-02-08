@@ -77,4 +77,10 @@ public class NameTest {
         Name name = new Name("Same Name");
         assertTrue(name.isSimilar(new Name("Name, Same")));
     }
+    
+    @Test
+    public void isSimilarSupersetNameShouldReturnTrue() throws IllegalValueException {
+        Name name = new Name("Same Name Name");
+        assertTrue(name.isSimilar(new Name("Same Name")));
+    }
 }
