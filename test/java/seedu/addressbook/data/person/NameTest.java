@@ -89,4 +89,10 @@ public class NameTest {
         Name name = new Name("Same Name");
         assertTrue(name.isSimilar(new Name("Same Name Name")));
     }
+    
+    @Test
+    public void isDifferentNameShouldReturnTrue() throws IllegalValueException {
+        Name name = new Name("Dr Same Name");
+        assertFalse(name.isSimilar(new Name("Mr Same Name")));
+    }
 }
