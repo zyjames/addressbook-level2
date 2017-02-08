@@ -3,7 +3,9 @@ package seedu.addressbook.data.person;
 import seedu.addressbook.data.exception.IllegalValueException;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Represents a Person's name in the address book.
@@ -16,6 +18,7 @@ public class Name {
     public static final String NAME_VALIDATION_REGEX = "[\\p{Alpha} ]+";
     public final String fullName;
     private final String[] nameSplit;
+    private final Set<String> nameSet;
 
     /**
      * Validates given name.
@@ -31,6 +34,7 @@ public class Name {
         this.fullName = trimmedName;
         this.nameSplit = trimmedName.split(" ");
         Arrays.sort(nameSplit);
+        nameSet = new HashSet<String>(Arrays.asList(nameSplit));
     }
 
     /**
@@ -69,8 +73,8 @@ public class Name {
      */
     public boolean isSimilar(Name otherName) {
         if (otherName instanceof Name) {
-            if (this.nameSplit.length != otherName.nameSplit.length) {
-                return false;
+            if (this.nameSplit.length > otherName.nameSplit.length) {
+                return this.nameSet.containsAll(otherName.nameSet);
             }
             else {
                 for (int i = 0; i < this.nameSplit.length; i++) {
