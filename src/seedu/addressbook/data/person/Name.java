@@ -32,7 +32,7 @@ public class Name {
             throw new IllegalValueException(MESSAGE_NAME_CONSTRAINTS);
         }
         this.fullName = trimmedName;
-        this.nameSplit = trimmedName.split(" ");
+        this.nameSplit = trimmedName.toLowerCase().split(" ");
         Arrays.sort(nameSplit);
         nameSet = new HashSet<String>(Arrays.asList(nameSplit));
     }
