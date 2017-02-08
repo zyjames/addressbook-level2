@@ -8,6 +8,9 @@ import org.junit.Test;
 import seedu.addressbook.data.exception.IllegalValueException;
 import seedu.addressbook.data.person.Name;
 
+/**
+ * Name Test class to test Name::isSimiliar method 
+ */
 public class NameTest {
     private Name name;
     
